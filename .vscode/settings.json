@@ -1,0 +1,13 @@
+{
+  "workbench.colorCustomizations": {
+    "editorLineNumber.foreground": "#ffffff15",
+    "editorLineNumber.activeForeground": "#ffffff44",
+    "widget.shadow": "#ffffff00",
+    "scrollbar.shadow": "#ffffff00",
+    "list.focusOutline": "#ffffff00",
+    "list.activeSelectionBackground": "#ffffff15",
+    "list.hoverBackground": "#ffffff08",
+    "list.inactiveSelectionBackground": "#ffffff10"
+  },
+  "cSpell.words": ["tailwindcss"]
+}
