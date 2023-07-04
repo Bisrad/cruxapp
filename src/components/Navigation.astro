@@ -1,16 +1,44 @@
 ---
-import ThemeIcon from './ThemeIcon.astro';
+// component imports
+import Link from './Link.astro';
+
+// data imports
+import navData from '../data/NavData';
 ---
 
-<div class='flex justify-between nav-links'>
-  <div class='flex-1'>
-    <h1 class='logo'>CRUX APP</h1>
+<div class='flex justify-between p-4 navbar'>
+  <a href='/' class='flex items-center' aria-label='Go home'>
+    <h1 class='text-xl font-bold'>Crux App</h1>
+  </a>
+  <div class='md:hidden'>
+    <button
+      class='text-gray-600 focus:outline-none focus:text-gray-800'
+      id='menuToggle'
+    >
+      <svg
+        class='w-6 h-6'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+      >
+        <path
+          id='menuIcon'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          stroke-width='2'
+          d='M4 6h16M4 12h16M4 18h16'></path>
+      </svg>
+    </button>
   </div>
-
-  <div class='flex-1 self-center'>
-    <a href='/' class='mr-4'>Home</a>
-    <a href='/table/' class='mr-4'>Table</a>
-    <a href='/dashboard/' class='mr-4'>Dashboard</a>
-    <a href='/login/'>Login</a>
-  </div>
+  <ul id='navLinks' class='hidden md:flex md:items-center'>
+    {
+      navData.map((item: { name: string; path: string }) => (
+        <Link text={item.name} href={item.path} />
+      ))
+    }
+  </ul>
 </div>
+
+<script>
+  import '../scripts/nav.js';
+</script>

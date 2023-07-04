@@ -1,0 +1,17 @@
+---
+interface Props {
+  text: string;
+  href: string;
+  classes?: string;
+}
+
+const { text, href, ...rest } = Astro.props as Props;
+---
+
+<a
+  href={href}
+  class='flex mr-4 justify-around text-slate-900 hover:text-slate-600'
+  {...rest}
+>
+  <span class='flex-initial'>{text}</span>
+</a>

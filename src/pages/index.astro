@@ -1,11 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
+// import PassageAuth from '../components/PassageAuth.astro';
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<Layout title='Home'>
-  {/* Auth not working */}
-  <!-- <passage-register app-id={process.env.REACT_APP_PASSAGE_APP_ID}>
-  </passage-register> -->
-</Layout>
-
-<!-- <script src='https://psg.so/web.js'></script> -->
+<MainLayout title='Home'>
+  <!-- <PassageAuth /> -->
+  <p>Welcome to the Home Page</p>
+</MainLayout>

@@ -8,18 +8,10 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Profile {
-  id     Int     @id @default(autoincrement())
-  bio    String?
-  userId Int     @unique
-
-  @@index([userId])
-}
-
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model Account {
+  id       Int     @id @default(autoincrement())
+  username String? @unique(map: "username") @db.VarChar(255)
+  password String? @db.VarChar(255)
 }
 
 model Area {
@@ -29,11 +21,25 @@ model Area {
   description String? @db.Text
 }
 
+model Profile {
+  id     Int     @id @default(autoincrement())
+  bio    String?
+  userId Int     @unique
+
+  @@index([userId])
+}
+
 model Route {
   id         Int     @id
   wall_id    Int?
   name       String? @db.VarChar(255)
   difficulty String? @db.VarChar(5)
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
 }
 
 model Wall {
@@ -55,6 +61,13 @@ model vt_HOLD_1930360de2fc517da98465f78bef370b_20230705044736 {
   @@map("_vt_HOLD_1930360de2fc517da98465f78bef370b_20230705044736")
 }
 
+model vt_HOLD_1b2b55f24b3d5b659613d17b2b0563eb_20230705061010 {
+  id   Int    @id @default(autoincrement())
+  name String @db.VarChar(255)
+
+  @@map("_vt_HOLD_1b2b55f24b3d5b659613d17b2b0563eb_20230705061010")
+}
+
 model vt_HOLD_ccb647ff268b5e99a59af283a2c926d8_20230705044735 {
   id          Int     @id @default(autoincrement())
   name        String  @db.VarChar(255)
@@ -63,11 +76,4 @@ model vt_HOLD_ccb647ff268b5e99a59af283a2c926d8_20230705044735 {
 
   @@index([category_id], map: "category_id_idx")
   @@map("_vt_HOLD_ccb647ff268b5e99a59af283a2c926d8_20230705044735")
-}
-
-model vt_HOLD_1b2b55f24b3d5b659613d17b2b0563eb_20230705061010 {
-  id   Int    @id @default(autoincrement())
-  name String @db.VarChar(255)
-
-  @@map("_vt_HOLD_1b2b55f24b3d5b659613d17b2b0563eb_20230705061010")
 }

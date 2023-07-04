@@ -4,24 +4,18 @@ const prisma = new PrismaClient();
 
 export async function fetchData() {
   try {
-    const categories = await prisma.categories.findMany();
-    const products = await prisma.products.findMany();
-    const posts = await prisma.post.findMany();
+    // const categories = await prisma.categories.findMany();
     const profiles = await prisma.profile.findMany();
     const users = await prisma.user.findMany();
 
     console.log('Fetched data:', {
-      categories,
-      products,
-      posts,
+      // categories,
       profiles,
       users,
     });
 
     return {
-      categories,
-      products,
-      posts,
+      // categories,
       profiles,
       users,
     };

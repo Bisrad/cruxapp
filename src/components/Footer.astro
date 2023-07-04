@@ -1,17 +1,16 @@
 ---
-// import Social from '../components/Social.astro';
 ---
 
-<footer>
-  <!-- <p>Im a footer</p> -->
-  <!-- <Social platform='twitter' username='@Dev_Bread' /> -->
-  <!-- <Social platform='github' username='bisrad' /> -->
+<footer class='bg-gray-700 py-4 text-center sticky bottom-0'>
+  <small class='text-gray-100'>
+    &copy; <span id='b'>{new Date().getFullYear()}</span> | All rights reserved
+  </small>
 </footer>
 
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+<script>
+  const currentYear = new Date().getFullYear();
+  const copyrightElement = document.querySelector('#copyright');
+  if (copyrightElement) {
+    copyrightElement.textContent = currentYear.toString();
   }
-</style>
+</script>

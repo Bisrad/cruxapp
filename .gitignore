@@ -19,3 +19,13 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Vercel build files
+.vercel
+out
+.cache
+
+# Ignore specific build files
+/build
+/dist
+/public

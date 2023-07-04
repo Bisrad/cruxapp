@@ -1,0 +1,25 @@
+---
+// component import
+import MainHead from './MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.astro';
+
+// style import
+import '../styles/global.css';
+
+const {
+  title = 'Crux App',
+  description = 'an App to connect the climbing world',
+} = Astro.props;
+---
+
+<html lang='en'>
+  <MainHead title={title} description={description} />
+  <body class='flex flex-col min-h-screen'>
+    <Navigation />
+    <main>
+      <slot>Default Text</slot>
+    </main>
+    <Footer />
+  </body>
+</html>

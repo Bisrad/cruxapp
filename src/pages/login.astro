@@ -1,7 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import PassageAuth from '../components/PassageAuth.jsx';
+import LoginForm from '../components/LoginForm.astro';
+import LoginLayout from '../layouts/LoginLayout.astro';
 ---
 
-<Layout title='Login'>
-  <h1>Im the Login page</h1>
-</Layout>
+<LoginLayout title='Login'>
+  <LoginForm client:only />
+</LoginLayout>
+
+<PassageAuth />

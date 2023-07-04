@@ -1,7 +1,7 @@
-import { PrismaClient } from '@prisma/client';
 import { areas } from './areas';
 import { walls } from './walls';
 import { routes } from './routes';
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 // Trying to seed the db with dummy data

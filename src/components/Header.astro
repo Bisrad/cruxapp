@@ -1,20 +1,15 @@
 ---
-import Hamburger from './Hamburger.astro';
-import Navigation from './Navigation.astro';
-import ThemeIcon from './ThemeIcon.astro';
 ---
 
-<div class='header'>
-  <nav class='flex'>
-    <Hamburger />
-    <Navigation />
-    <ThemeIcon />
-  </nav>
+<div class='header bg-slate-300'>
+  <div class='container mx-auto px-4 py-8'>
+    <h1 class='text-4xl font-bold text-white'>Welcome to the Hero Section</h1>
+    <p class='text-lg text-white mt-4'>
+      This is a sample hero section created using Tailwind CSS.
+    </p>
+    <button
+      class='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 mt-6 rounded'
+      >Get Started</button
+    >
+  </div>
 </div>
-
-<style>
-  nav {
-    display: flex;
-    justify-content: space-between;
-  }
-</style>
