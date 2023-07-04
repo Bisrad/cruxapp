@@ -1,8 +1,16 @@
 ---
+import ThemeIcon from './ThemeIcon.astro';
 ---
 
-<div class='nav-links'>
-  <a href='/'>Home</a>
-  <a href='/table/'>Table</a>
-  <a href='/login/'>Login</a>
+<div class='flex justify-between nav-links'>
+  <div class='flex-1'>
+    <h1 class='logo'>CRUX APP</h1>
+  </div>
+
+  <div class='flex-1 self-center'>
+    <a href='/' class='mr-4'>Home</a>
+    <a href='/table/' class='mr-4'>Table</a>
+    <a href='/dashboard/' class='mr-4'>Dashboard</a>
+    <a href='/login/'>Login</a>
+  </div>
 </div>

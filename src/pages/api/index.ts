@@ -10,6 +10,14 @@ export async function fetchData() {
     const profiles = await prisma.profile.findMany();
     const users = await prisma.user.findMany();
 
+    console.log('Fetched data:', {
+      categories,
+      products,
+      posts,
+      profiles,
+      users,
+    });
+
     return {
       categories,
       products,

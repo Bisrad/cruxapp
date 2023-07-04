@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// import Card from '../components/Card.astro';
 ---
 
-<Layout title='Welcome to CRUX'>
-  <main>
-    <h1>Welcome to CRUX</h1>
-  </main>
+<Layout title='Home'>
+  <passage-register app-id={process.env.REACT_APP_PASSAGE_APP_ID}>
+  </passage-register>
 </Layout>
+
+<script src='https://psg.so/web.js'></script>
