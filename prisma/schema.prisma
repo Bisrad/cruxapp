@@ -19,6 +19,7 @@ model Area {
   name        String? @db.VarChar(255)
   location    String? @db.VarChar(255)
   description String? @db.Text
+  walls       Wall[] // Relation field
 }
 
 model Profile {
@@ -31,9 +32,12 @@ model Profile {
 
 model Route {
   id         Int     @id
-  wall_id    Int?
   name       String? @db.VarChar(255)
   difficulty String? @db.VarChar(5)
+  wall_id    Int // Foreign key
+  wall       Wall    @relation(fields: [wall_id], references: [id]) // Relation field
+
+  @@index([wall_id])
 }
 
 model User {
@@ -44,36 +48,10 @@ model User {
 
 model Wall {
   id      Int     @id
-  area_id Int?
   name    String? @db.VarChar(255)
-}
+  area_id Int // Foreign key
+  area    Area    @relation(fields: [area_id], references: [id]) // Relation field
+  routes  Route[] // Relation field
 
-model vt_HOLD_1930360de2fc517da98465f78bef370b_20230705044736 {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime
-  title     String   @db.VarChar(255)
-  content   String?
-  published Boolean  @default(false)
-  authorId  Int
-
-  @@index([authorId], map: "Post_authorId_idx")
-  @@map("_vt_HOLD_1930360de2fc517da98465f78bef370b_20230705044736")
-}
-
-model vt_HOLD_1b2b55f24b3d5b659613d17b2b0563eb_20230705061010 {
-  id   Int    @id @default(autoincrement())
-  name String @db.VarChar(255)
-
-  @@map("_vt_HOLD_1b2b55f24b3d5b659613d17b2b0563eb_20230705061010")
-}
-
-model vt_HOLD_ccb647ff268b5e99a59af283a2c926d8_20230705044735 {
-  id          Int     @id @default(autoincrement())
-  name        String  @db.VarChar(255)
-  image_url   String? @db.VarChar(255)
-  category_id Int?
-
-  @@index([category_id], map: "category_id_idx")
-  @@map("_vt_HOLD_ccb647ff268b5e99a59af283a2c926d8_20230705044735")
+  @@index([area_id])
 }

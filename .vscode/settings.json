@@ -9,5 +9,6 @@
     "list.hoverBackground": "#ffffff08",
     "list.inactiveSelectionBackground": "#ffffff10"
   },
-  "cSpell.words": ["tailwindcss"]
+  "cSpell.words": ["tailwindcss"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
