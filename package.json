@@ -1,6 +1,7 @@
 {
   "name": "cruxapp",
   "type": "module",
+  "main": "src/server/index.cjs",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
