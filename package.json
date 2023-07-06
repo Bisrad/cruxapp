@@ -1,15 +1,13 @@
 {
   "name": "cruxapp",
   "type": "module",
-  "main": "src/server/index.cjs",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "server": "node src/server/index.cjs"
+    "astro": "astro"
   },
   "dependencies": {
     "@astro-auth/client": "^1.0.5",
