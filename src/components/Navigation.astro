@@ -4,19 +4,20 @@ import Link from './Link.astro';
 
 // data imports
 import navData from '../data/NavData';
+import logo from '/src/assets/svg/logo-desktop.svg';
 ---
 
 <div class='flex justify-between p-4 navbar'>
   <a href='/' class='flex items-center' aria-label='Go home'>
-    <h1 class='text-xl font-bold'>Crux App</h1>
+    <img width='auto' src={logo} />
   </a>
   <div class='md:hidden'>
     <button
-      class='text-gray-600 focus:outline-none focus:text-gray-800'
+      class='text-gray-100 focus:outline-none focus:text-gray-600'
       id='menuToggle'
     >
       <svg
-        class='w-6 h-6'
+        class='w-8 h-8'
         fill='none'
         viewBox='0 0 24 24'
         stroke='currentColor'

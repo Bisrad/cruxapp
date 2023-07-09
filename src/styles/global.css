@@ -8,6 +8,24 @@
   font: inherit;
 }
 
+/* add font */
+@font-face {
+  font-family: 'Inter';
+  src: url('src/fonts/Inter/Inter-VariableFont_slnt,wght.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Nav bar */
+.navbar {
+  background-color: #1e1e1e;
+}
+
 /* Main Styles */
 :root {
   --primary-color: #ffffff;
